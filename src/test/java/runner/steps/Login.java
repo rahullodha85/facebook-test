@@ -12,6 +12,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import runner.base.TestPages;
 
+import java.util.Map;
+
 public class Login {
 
     private static WebDriver driver;
@@ -31,6 +33,13 @@ public class Login {
     @When("^User logs in with email \"([^\"]*)\" and password \"([^\"]*)\"$")
     public void login(String email, String password) throws Throwable {
         testPages.login.performLogin(email, password);
+    }
+
+    @When("^User logs in with email and password$")
+    public void user_logs_in_with_email_and_password(Map<String,String> input) throws Throwable {
+        for (String key :input.keySet()) {
+            testPages.login.performLogin(key, input.get(key).toString());
+        }
     }
 
     @Then("^User should be logged in successfully$")
