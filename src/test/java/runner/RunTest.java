@@ -10,5 +10,5 @@ import org.junit.runner.RunWith;
         format = {"pretty", "html:target/html/", "json:target/json/output.json"},
         features = {"src/test/resources/features"}
 )
-public class RunTests {
+public class RunTest {
 }

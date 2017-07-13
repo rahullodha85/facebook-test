@@ -16,7 +16,7 @@ public class Drivers {
     private static WebDriver driver;
 
     public static WebDriver getChromeDriver() {
-        String driverPath = Drivers.class.getClassLoader().getResource("drivers/chromedriver").getPath();
+        String driverPath = System.getProperty("user.dir") + "/drivers/chromedriver";
         System.setProperty("webdriver.chrome.driver", driverPath);
         driver = new ChromeDriver(getChromeOptions());
         driver.manage().window().maximize();

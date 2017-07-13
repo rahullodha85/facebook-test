@@ -1,6 +1,5 @@
-package runner.base;
+package base;
 
-import cucumber.api.Scenario;
 import org.openqa.selenium.WebDriver;
 import pages.Login;
 
