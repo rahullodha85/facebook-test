@@ -10,7 +10,7 @@ public class Login {
     WebDriver driver;
     Scenario scenario;
 
-    public Login(WebDriver driver, Scenario scenario) {
+    public Login(WebDriver driver) {
         this.driver = driver;
         this.scenario = scenario;
     }

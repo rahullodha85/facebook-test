@@ -9,7 +9,7 @@ Feature: Login
     Given Facebook.com is open
     When User logs in with email "<email>" and password "<password>"
     Then User should be logged in successfully
-    #second test will fail
+    #second test will fail due to invalid credentials and facebook invalid credentials page timing out
     Examples:
       | email                    | password   |
       | rahullodha0305@gmail.com | test123456 |

@@ -8,7 +8,7 @@ public class TestPages {
 
     public Login login;
 
-    public TestPages(WebDriver driver, Scenario scenario) {
-        login = new Login(driver, scenario);
+    public TestPages(WebDriver driver) {
+        login = new Login(driver);
     }
 }

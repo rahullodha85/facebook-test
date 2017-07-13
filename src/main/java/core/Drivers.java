@@ -1,6 +1,9 @@
 package core;
 
+import cucumber.api.Scenario;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -25,6 +28,7 @@ public class Drivers {
     private static ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
+        options.addArguments("--disable-geolocation");
 
         return options;
     }
@@ -36,5 +40,11 @@ public class Drivers {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static void takeScreenShot(Scenario scenario) {
+        final byte[] screenshot = ((TakesScreenshot) driver)
+                .getScreenshotAs(OutputType.BYTES);
+        scenario.embed(screenshot, "image/png");
     }
 }
